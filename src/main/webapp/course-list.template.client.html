@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Course Manager</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <span class="navbar-brand mb-0 h1">Course Manager</span>
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">
+                <select>
+                    <option value="ADMIN">Owned by</option>
+                    <option value="Faculty">me</option>
+                    <option value="Student">Student</option>
+                </select>
+            </th>
+            <th scope="col">Last Modified by me</th>
+            <th scope="col">
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">
+                CS5000 Software Engineering Graduate
+            </th>
+            <td>me</td>
+            <td><time datetime="06:15 PM">06:15 PM</time></td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">
+                CS4550 Software Engineering Ungraduate
+            </th>
+            <td>me</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">me</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
