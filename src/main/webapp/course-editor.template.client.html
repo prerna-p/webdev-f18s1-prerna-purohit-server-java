@@ -84,36 +84,75 @@
 
                     </li>
                 </ul>
-                <form>
-                    <div class="form-group">
-                        <label class="h3" for="formGroupExampleInput">Heading Widget</label>
-                        <input type="text"
-                               class="form-control"
-                               id="formGroupExampleInput"
-                               placeholder="Heading Text">
+
+                <span class="border">
+                    <div class="row">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">
+                                    <h3>
+                                        Heading Widget
+                                    </h3></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-arrow-circle-up fa-lg"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-arrow-circle-down fa-lg"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">
+                                    <select class="custom-select">
+                                        <option value="1">Heading</option>
+                                        <option value="2">Paragraph</option>
+                                        <option value="3">List</option>
+                                        <option value="3">Image</option>
+                                        <option value="4">Link</option>
+                                    </select></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                   <i class="fas fa-times-circle fa-lg"></i>
+                                </a>
+
+                            </li>
+                        </ul>
                     </div>
-                    <div class="form-group">
-                        <select class="custom-select">
-                            <option value="1">Heading 1</option>
-                            <option value="2">Heading 2</option>
-                            <option value="3">Heading 3</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text"
-                               class="form-control"
-                               id="formGroupExampleInput2"
-                               placeholder="Widget name">
-                    </div>
-                </form>
+                    <form>
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="headingText"
+                                   placeholder="Heading Text">
+
+                        </div>
+                        <div class="form-group">
+                            <select class="custom-select">
+                                <option value="1">Heading 1</option>
+                                <option value="2">Heading 2</option>
+                                <option value="3">Heading 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="widgetNameForm"
+                                   placeholder="Widget name"
+                                   readonly>
+                        </div>
+                    </form>
+                </span>
+
             </div>
         </div>
     </div>
 
     <i class="fas fa-toggle-on"></i>
-    <i class="fas fa-arrow-circle-up"></i>
-    <i class="fas fa-arrow-circle-down"></i>
-    <i class="fas fa-times-circle"></i>
+
     <i class="fas fa-plus-circle"></i>
 
 
