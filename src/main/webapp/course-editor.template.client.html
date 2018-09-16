@@ -2,20 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          rel="stylesheet">
     <title>Course Editor</title>
 </head>
 <body>
-    <h1> Course Editor</h1>
-    <div class="row">
-        <div class="col-2">
-            <h3>Left Side</h3>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <a class="navbar-brand" href="#">CS5610 Webdev</a>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Build</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Theme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Store</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Apps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </li>
+
+            </ul>
         </div>
-        <div class="col-10">
-            <h3>Right Side</h3>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <ul class="nav flex-column nav-pills">
+                    <a class="nav-link active" href="#">Module 1</a>
+                    <a class="nav-link" href="#">Module 2</a>
+                    <a class="nav-link" href="#">Module 3</a>
+                    <a class="nav-link" href="#">Module 4</a>
+                </ul>
+            </div>
+            <div class="col-10">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Topic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Topic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Topic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Topic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-plus-square fa-lg"></i>
+                        </a>
+
+                    </li>
+                </ul>
+                <form>
+                    <div class="form-group">
+                        <label class="h3" for="formGroupExampleInput">Heading Widget</label>
+                        <input type="text"
+                               class="form-control"
+                               id="formGroupExampleInput"
+                               placeholder="Heading Text">
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select">
+                            <option value="1">Heading 1</option>
+                            <option value="2">Heading 2</option>
+                            <option value="3">Heading 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control"
+                               id="formGroupExampleInput2"
+                               placeholder="Widget name">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
+    <i class="fas fa-toggle-on"></i>
+    <i class="fas fa-arrow-circle-up"></i>
+    <i class="fas fa-arrow-circle-down"></i>
+    <i class="fas fa-times-circle"></i>
+    <i class="fas fa-plus-circle"></i>
 
 
 </body>
