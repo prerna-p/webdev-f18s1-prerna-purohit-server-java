@@ -12,7 +12,15 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
-        <a class="navbar-brand" href="#">CS5610 Webdev</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-white" href="#">
+                    <i class="fas fa-times fa-lg"></i>
+                </a>
+            </li>
+        </ul>
+
+        <a class="navbar-brand text-white" href="#">CS5610 Webdev</a>
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -26,25 +34,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Build</a>
+                    <a class="nav-link text-white" href="#">Build</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pages</a>
+                    <a class="nav-link text-white" href="#">Pages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Theme</a>
+                    <a class="nav-link text-white" href="#">Theme</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Store</a>
+                    <a class="nav-link text-white" href="#">Store</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Apps</a>
+                    <a class="nav-link text-white" href="#">Apps</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link text-white" href="#">Settings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link text-white" href="#">
                         <i class="fas fa-plus"></i>
                     </a>
                 </li>
@@ -56,14 +64,30 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2">
-                <ul class="nav flex-column nav-pills">
-                    <a class="nav-link active" href="#">Module 1</a>
-                    <a class="nav-link" href="#">Module 2</a>
-                    <a class="nav-link" href="#">Module 3</a>
-                    <a class="nav-link" href="#">Module 4</a>
+                <ul class="nav flex-column nav-pills bg-dark">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#">Module 1
+                            <i class="fas fa-times fa-sm text-white"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Module 2
+                            <i class="fas fa-times fa-sm text-white"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Module 3
+                            <i class="fas fa-times fa-sm text-white"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Module 4
+                            <i class="fas fa-times fa-sm text-white"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-10">
+            <div class="mt-2 col-10">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Topic</a>
@@ -84,44 +108,49 @@
 
                     </li>
                 </ul>
-                <span class="border">
-                    <div class="row">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item">
-                                <a class="nav-link " href="#">
-                                    <h3>
-                                        Heading Widget
-                                    </h3></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-arrow-circle-up fa-lg"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-arrow-circle-down fa-lg"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">
-                                    <select class="custom-select">
+
+
+                <div class="row">
+                    <div class="mt-1 col-12 text-right">
+                        <button class="btn-success btn-sm"> Save</button>
+                        Preview
+                        <i class="fas fa-toggle-off fa-lg"></i>
+                    </div>
+                </div>
+
+                <!-- begin HEADING widget -->
+                <div class="mt-1 border" id="headingWidget">
+                    <div class= "row">
+                        <div class="col-8">
+                        <a class="nav-link disabled">
+                            <h3>
+                                Heading Widget
+                            </h3>
+                        </a>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="float-right pr-2">
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-up"></i>
+                                </button>
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-down"></i>
+                                </button>
+                                <select class="mt-2">
                                         <option value="1">Heading</option>
                                         <option value="2">Paragraph</option>
                                         <option value="3">List</option>
                                         <option value="3">Image</option>
                                         <option value="4">Link</option>
-                                    </select></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                   <i class="fas fa-times-circle fa-lg"></i>
-                                </a>
-
-                            </li>
-                        </ul>
+                                </select>
+                                <button class="btn-danger">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <form>
+                    <form class="px-2 pb-2">
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
@@ -143,8 +172,78 @@
                                    placeholder="Widget name"
                                    readonly>
                         </div>
+                        <div>
+                            <h4> Preview</h4>
+                            <h2>Heading text</h2>
+                        </div>
                     </form>
-                </span>
+                </div>
+                <!-- end of heading widget -->
+
+                <!-- add new widget button -->
+                <div class="row">
+                    <div class="mt-1 col-12 text-right">
+                        <i class="fas fa-plus-square fa-lg text-danger"></i>
+                    </div>
+                </div>
+
+                <!-- begin Paragraph widget -->
+                <div class="mt-1 border" id="paraWidget">
+                    <div class= "row">
+                        <div class="col-8">
+                            <a class="nav-link disabled">
+                                <h3>
+                                    Paragraph Widget
+                                </h3>
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="float-right pr-2">
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-up"></i>
+                                </button>
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-down"></i>
+                                </button>
+                                <select class="mt-2">
+                                    <option value="1">Heading</option>
+                                    <option value="2">Paragraph</option>
+                                    <option value="3">List</option>
+                                    <option value="3">Image</option>
+                                    <option value="4">Link</option>
+                                </select>
+                                <button class="btn-danger">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="px-2 pb-2">
+                        <div class="form-group">
+                            <textarea type="text"
+                                placeholder="Lorem ipsum"
+                                class="form-control">
+                            </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="widgetNameForm"
+                                   placeholder="Widget name"
+                                   readonly>
+                        </div>
+
+                        <div>
+                            <h4> Preview</h4>
+                            Lorem ipsum
+                        </div>
+                    </form>
+                </div>
+                <!-- end of paragraph widget -->
+
 
 </body>
 </html>
