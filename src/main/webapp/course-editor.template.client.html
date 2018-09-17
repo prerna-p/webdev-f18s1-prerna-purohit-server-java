@@ -12,6 +12,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
+
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link text-white" href="#">
@@ -63,30 +64,67 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2">
-                <ul class="nav flex-column nav-pills bg-dark">
+            <div class="col-2 bg-dark">
+                <ul class="nav flex-column nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" href="#">Module 1
-                            <i class="fas fa-times fa-sm text-white"></i>
-                        </a>
+                        <div class="row">
+                            <div class="col-8 text-center">
+                                <a class="nav-link active text-white"
+                                   href="#">Module 1</a>
+                            </div>
+
+                            <div class="col-3">
+                                <button class="btn btn-dark">
+                                    <i class="fas fa-times fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Module 2
-                            <i class="fas fa-times fa-sm text-white"></i>
-                        </a>
+                        <div class="row">
+                            <div class="col-8 text-center">
+                                <a class="nav-link text-white"
+                                   href="#">Module 2</a>
+                            </div>
+
+                            <div class="col-3">
+                                <button class="btn btn-dark">
+                                    <i class="fas fa-times fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Module 3
-                            <i class="fas fa-times fa-sm text-white"></i>
-                        </a>
+                        <div class="row">
+                            <div class="col-8 text-center">
+                                <a class="nav-link text-white"
+                                   href="#">Module 3</a>
+                            </div>
+
+                            <div class="col-3">
+                                <button class="btn btn-dark">
+                                    <i class="fas fa-times fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Module 4
-                            <i class="fas fa-times fa-sm text-white"></i>
-                        </a>
+                        <div class="row">
+                            <div class="col-8 text-center">
+                                <a class="nav-link text-white"
+                                   href="#">Module 4</a>
+                            </div>
+
+                            <div class="col-3">
+                                <button class="btn btn-dark">
+                                    <i class="fas fa-times fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
+
             <div class="mt-2 col-10">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
@@ -108,7 +146,6 @@
 
                     </li>
                 </ul>
-
 
                 <div class="row">
                     <div class="mt-1 col-12 text-right">
@@ -169,8 +206,7 @@
                             <input type="text"
                                    class="form-control"
                                    id="widgetNameForm"
-                                   placeholder="Widget name"
-                                   readonly>
+                                   placeholder="Widget name">
                         </div>
                         <div>
                             <h4> Preview</h4>
@@ -224,16 +260,14 @@
                         <div class="form-group">
                             <textarea type="text"
                                 placeholder="Lorem ipsum"
-                                class="form-control">
-                            </textarea>
+                                class="form-control"></textarea>
                         </div>
 
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
                                    id="widgetNameForm"
-                                   placeholder="Widget name"
-                                   readonly>
+                                   placeholder="Widget name">
                         </div>
 
                         <div>
@@ -244,6 +278,201 @@
                 </div>
                 <!-- end of paragraph widget -->
 
+                <!-- begin list widget -->
+                <div class="mt-1 border" id="listWidget">
+                    <div class= "row">
+                        <div class="col-8">
+                            <a class="nav-link disabled">
+                                <h3>
+                                    List Widget
+                                </h3>
+                            </a>
+                        </div>
 
+                        <div class="col-4">
+                            <div class="float-right pr-2">
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-up"></i>
+                                </button>
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-down"></i>
+                                </button>
+                                <select class="mt-2">
+                                    <option value="1">Heading</option>
+                                    <option value="2">Paragraph</option>
+                                    <option value="3">List</option>
+                                    <option value="3">Image</option>
+                                    <option value="4">Link</option>
+                                </select>
+                                <button class="btn-danger">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="px-2 pb-2">
+                        <div class="form-group">
+                            <textarea type="text"
+                                      placeholder="Put each
+item in
+new row"
+                                      class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="custom-select">
+                                <option value="1">Ordered List</option>
+                                <option value="2">Unordered List</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="widgetNameForm"
+                                   placeholder="Widget name">
+                        </div>
+
+                        <div>
+                            <h4> Preview</h4>
+                            <ul>
+                                <li>Put each</li>
+                                <li>item in</li>
+                                <li>new row"</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <!-- end of list widget -->
+
+                <!-- begin image widget -->
+                <div class="mt-1 border" id="imageWidget">
+                    <div class= "row">
+                        <div class="col-8">
+                            <a class="nav-link disabled">
+                                <h3>
+                                    Image Widget
+                                </h3>
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="float-right pr-2">
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-up"></i>
+                                </button>
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-down"></i>
+                                </button>
+                                <select class="mt-2">
+                                    <option value="1">Heading</option>
+                                    <option value="2">Paragraph</option>
+                                    <option value="3">List</option>
+                                    <option value="3">Image</option>
+                                    <option value="4">Link</option>
+                                </select>
+                                <button class="btn-danger">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="px-2 pb-2">
+
+                        <div class="form-group">
+                            <input type="url"
+                                   class="form-control"
+                                   id="urlText"
+                                   placeholder="http://lorempixel.com/300/150/">
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="widgetNameForm"
+                                   placeholder="Widget name">
+                        </div>
+
+                        <div>
+                            <h4> Preview</h4>
+                            <img src="https://jillsbooks.files.wordpress.com/2010/12/red-apple.jpg"
+                                 alt="Responsive image"
+                                 class="img-thumbnail">
+                        </div>
+                    </form>
+                </div>
+                <!-- end of image widget -->
+
+                <!-- begin link widget -->
+                <div class="mt-1 border" id="linkWidget">
+                    <div class= "row">
+                        <div class="col-8">
+                            <a class="nav-link disabled">
+                                <h3>
+                                    Link Widget
+                                </h3>
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="float-right pr-2">
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-up"></i>
+                                </button>
+                                <button class="btn-warning">
+                                    <i class="fas fa-arrow-down"></i>
+                                </button>
+                                <select class="mt-2">
+                                    <option value="1">Heading</option>
+                                    <option value="2">Paragraph</option>
+                                    <option value="3">List</option>
+                                    <option value="3">Image</option>
+                                    <option value="4">Link</option>
+                                </select>
+                                <button class="btn-danger">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="px-2 pb-2">
+
+                        <div class="form-group">
+                            <input type="url"
+                                   class="form-control"
+                                   id="linkInfo"
+                                   placeholder="http://lorempixel.com/300/150/">
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="textForLink"
+                                   placeholder="Apple">
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="widgetNameForm"
+                                   placeholder="Widget name">
+                        </div>
+
+                        <div>
+                            <h4> Preview</h4>
+                            <a href="http://lorempixel.com/300/150/">Apple</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- end of link widget -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
