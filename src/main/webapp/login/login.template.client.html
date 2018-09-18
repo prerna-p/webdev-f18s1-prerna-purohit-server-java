@@ -11,7 +11,9 @@
 
 <body>
     <div class="container">
-        <h1>Sign In</h1>
+        <h1>
+            Sign In
+        </h1>
         <form>
             <div class="form-group row">
                 <label for="username"
@@ -36,18 +38,27 @@
                            placeholder="123qwe#$%">
                 </div>
             </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-8">
                     <button class="btn btn-primary btn-block"
-                            onclick="location.href='../home/homepage.html'" type="button">
-                        Sign in</button>
+                            onclick="location.href='../home/homepage.template.client.html'"
+                            type="button"
+                            id="signInBtn">
+                        Sign in
+                    </button>
                     <div class="row">
                         <div class="col-6">
-                            <a href="#">Forgot Password?</a>
+                            <a href="../resetpassword/reset-with-email.template.client.html"
+                               id="frgtPwd">
+                                Forgot Password?
+                            </a>
                         </div>
                         <div class="col-6">
-                            <a href="../register/register.template.client.html" class="float-right">Sign up</a>
+                            <a href="../register/register.template.client.html"
+                               class="float-right"
+                               id="signUpBtn">Sign up</a>
                         </div>
                     </div>
                 </div>
