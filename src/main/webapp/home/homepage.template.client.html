@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          rel="stylesheet">
+    <title>Course Manager</title>
+</head>
+
+<body class="bg-light">
+
+<div class="row bg-primary">
+    <div class="col-1 text-white col-form-label">
+        <a href="#" class="btn text-white">
+            <i class="fas fa-bars fa-2x"></i>
+        </a>
+    </div>
+    <div class="col-3 text-white col-form-label">
+        <h2 class="d-none d-md-block ">
+            Course Manager
+        </h2>
+    </div>
+    <div class="col-6 col-form-label">
+        <input type="text"
+               class="form-control"
+               placeholder="New Course Title" />
+    </div>
+    <div class="col-1 mt-1 col-form-label">
+        <a href="#"
+           id="addCourseBtn1">
+            <i class="fas fa-plus-circle fa-lg text-danger"></i>
+        </a>
+    </div>
+</div>
+
+<div class="container-fluid bg-light d-none d-md-block">
+    <div class="row mt-2">
+        <div class="h4 text-secondary col-sm-1">
+        </div>
+        <div class="h4 text-secondary col-sm-4">
+            Title
+        </div>
+        <div class="h4 text-secondary col-sm-2">
+            <select class="form-control bg-light"
+                    id="selectOwner">
+                <option value="1">Owned by</option>
+                <option value="2">me</option>
+                <option value="2">others</option>
+            </select>
+        </div>
+        <div class="h4 text-secondary col-sm-3">
+            Last modified by me
+        </div>
+        <div class="h4 text-secondary col-sm-1">
+            <i class="fas fa-th-large"></i>
+        </div>
+        <div class="h4 text-secondary col-sm-1">
+            <i class="fas fa-sort-alpha-up"></i>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid bg-light">
+    <div class="row">
+        <div class="h4 text-primary col-sm-1">
+        </div>
+        <div class="text-primary col-sm-4">
+            <h4 id="todayID">
+                Today
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="text-dark col-4">
+            <h6>
+                <a href="#"
+                   id="fileBtnId">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                CS5610
+            </h6>
+        </div>
+        <div class="text-secondary col-2 d-none d-md-block">
+            me
+        </div>
+        <div class="text-secondary col-3 d-none d-md-block">
+            06:55 PM
+        </div>
+
+        <div class="col-1 col-xs-3">
+            <a href="#"
+               class="text-danger">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="text-dark col-4">
+            <h6>
+                <a href="#"
+                   id="fileBtnId">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                CS5610
+            </h6>
+        </div>
+        <div class="text-secondary col-2 d-none d-md-block">
+            me
+        </div>
+        <div class="text-secondary col-3 d-none d-md-block">
+            06:55 PM
+        </div>
+
+        <div class="col-1">
+            <a href="#"
+               class="text-danger">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="bg-white">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="text-dark col-4">
+            <h6>
+                <a href="#"
+                   id="fileBtnId">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                CS5610
+            </h6>
+        </div>
+        <div class="text-secondary col-2 d-none d-md-block">
+            me
+        </div>
+        <div class="text-secondary col-3 d-none d-md-block">
+            06:55 PM
+        </div>
+
+        <div class="col-1">
+            <a href="#"
+               class="text-danger">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="container-fluid bg-light">
+    <div class="row">
+        <div class="h4 text-primary col-sm-1">
+        </div>
+        <div class="text-primary col-sm-4">
+            <h4 id="yestID">
+                Yesterday
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="text-dark col-4">
+            <h6>
+                <a href="#"
+                   id="fileBtnId">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                CS5610
+            </h6>
+        </div>
+        <div class="text-secondary col-2 d-none d-md-block">
+            me
+        </div>
+        <div class="text-secondary col-3 d-none d-md-block">
+            06:55 PM
+        </div>
+
+        <div class="col-1">
+            <a href="#"
+               class="text-danger">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer navbar-fixed-bottom">
+    <div class="row">
+        <div class="mt-2 pr-4 col-12 text-right">
+            <a href="#"
+               id="addCourseBtn2"
+                class="text-danger">
+                <i class="fas fa-plus-circle fa-3x"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

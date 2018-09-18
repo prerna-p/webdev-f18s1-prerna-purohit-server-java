@@ -15,13 +15,15 @@
 
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link text-white" href="#">
+                <button class="btn btn-dark">
                     <i class="fas fa-times fa-lg"></i>
-                </a>
+                </button>
             </li>
         </ul>
 
-        <a class="navbar-brand text-white" href="#">CS5610 Webdev</a>
+        <a class="navbar-brand text-white"
+           href="#">CS5610 Webdev</a>
+
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -32,30 +34,38 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse"
+             id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="#">Build</a>
+                    <button class="btn btn-dark"
+                            id="buildBtn">Build</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Pages</a>
+                    <button class="btn btn-dark"
+                            id="pageBtn">Pages</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Theme</a>
+                    <button class="btn btn-dark"
+                            id="themeBtn">Theme</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Store</a>
+                    <<button class="btn btn-dark"
+                             id="storeBtn">Store</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Apps</a>
+                    <button class="btn btn-dark"
+                            id="appBtn">Apps</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Settings</a>
+                    <button class="btn btn-dark"
+                            id="settBtn">Settings</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">
+                    <button class="btn btn-dark"
+                            id="plusBtn1">
                         <i class="fas fa-plus"></i>
-                    </a>
+                    </button>
                 </li>
 
             </ul>
@@ -73,7 +83,7 @@
                                    href="#">Module 1</a>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-3 d-none d-md-block">
                                 <button class="btn btn-dark">
                                     <i class="fas fa-times fa-sm"></i>
                                 </button>
@@ -87,7 +97,7 @@
                                    href="#">Module 2</a>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-3 d-none d-md-block">
                                 <button class="btn btn-dark">
                                     <i class="fas fa-times fa-sm"></i>
                                 </button>
@@ -101,7 +111,7 @@
                                    href="#">Module 3</a>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-3 d-none d-md-block">
                                 <button class="btn btn-dark">
                                     <i class="fas fa-times fa-sm"></i>
                                 </button>
@@ -115,9 +125,24 @@
                                    href="#">Module 4</a>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-3 d-none d-md-block">
                                 <button class="btn btn-dark">
                                     <i class="fas fa-times fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="row">
+                            <div class="col-8 d-none d-md-block">
+                                <input class="form-control bg-dark"
+                                       id="newModuleField"/>
+                            </div>
+
+                            <div class="col-2 d-none d-md-block">
+                                <button class="btn btn-dark"
+                                        id="addModule">
+                                    <i class="fas fa-plus fa-sm"></i>
                                 </button>
                             </div>
                         </div>
@@ -140,7 +165,9 @@
                         <a class="nav-link" href="#">Topic</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link"
+                           href="#"
+                           id="addTopicBtn">
                             <i class="fas fa-plus-square fa-lg"></i>
                         </a>
 
@@ -149,9 +176,13 @@
 
                 <div class="row">
                     <div class="mt-1 col-12 text-right">
-                        <button class="btn-success btn-sm"> Save</button>
+                        <button class="btn-success btn-sm"
+                                id="saveBtn"> Save</button>
                         Preview
-                        <i class="fas fa-toggle-off fa-lg"></i>
+                        <a href="#"
+                           class="toggleBtn">
+                            <i class="fas fa-toggle-off fa-lg"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -168,10 +199,12 @@
 
                         <div class="col-4">
                             <div class="float-right pr-2">
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="upBtn">
                                     <i class="fas fa-arrow-up"></i>
                                 </button>
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="dwnBtn">
                                     <i class="fas fa-arrow-down"></i>
                                 </button>
                                 <select class="mt-2">
@@ -181,7 +214,8 @@
                                         <option value="3">Image</option>
                                         <option value="4">Link</option>
                                 </select>
-                                <button class="btn-danger">
+                                <button class="btn-danger"
+                                        id="delWidBtn">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
@@ -205,12 +239,12 @@
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
-                                   id="widgetNameForm"
+                                   id="widgetNameHd"
                                    placeholder="Widget name">
                         </div>
                         <div>
                             <h4> Preview</h4>
-                            <h2>Heading text</h2>
+                            <h2 id="headPrev">Heading text</h2>
                         </div>
                     </form>
                 </div>
@@ -219,7 +253,11 @@
                 <!-- add new widget button -->
                 <div class="row">
                     <div class="mt-1 col-12 text-right">
-                        <i class="fas fa-plus-square fa-lg text-danger"></i>
+                        <button class="btn-danger"
+                                id="newWidgetBtn">
+                            <i class="fas fa-plus fa-lg "></i>
+                        </button>
+
                     </div>
                 </div>
 
@@ -236,10 +274,12 @@
 
                         <div class="col-4">
                             <div class="float-right pr-2">
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="upBtn">
                                     <i class="fas fa-arrow-up"></i>
                                 </button>
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="dwnBtn">
                                     <i class="fas fa-arrow-down"></i>
                                 </button>
                                 <select class="mt-2">
@@ -249,7 +289,8 @@
                                     <option value="3">Image</option>
                                     <option value="4">Link</option>
                                 </select>
-                                <button class="btn-danger">
+                                <button class="btn-danger"
+                                        id="delWidBtn">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
@@ -259,6 +300,7 @@
                     <form class="px-2 pb-2">
                         <div class="form-group">
                             <textarea type="text"
+                                      id="paraTxt"
                                 placeholder="Lorem ipsum"
                                 class="form-control"></textarea>
                         </div>
@@ -266,13 +308,13 @@
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
-                                   id="widgetNameForm"
+                                   id="widgetNamePara"
                                    placeholder="Widget name">
                         </div>
 
                         <div>
                             <h4> Preview</h4>
-                            Lorem ipsum
+                            <p id="paraPrev">Lorem ipsum</p>
                         </div>
                     </form>
                 </div>
@@ -291,10 +333,12 @@
 
                         <div class="col-4">
                             <div class="float-right pr-2">
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="upBtn">
                                     <i class="fas fa-arrow-up"></i>
                                 </button>
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="dwnBtn">
                                     <i class="fas fa-arrow-down"></i>
                                 </button>
                                 <select class="mt-2">
@@ -304,7 +348,8 @@
                                     <option value="3">Image</option>
                                     <option value="4">Link</option>
                                 </select>
-                                <button class="btn-danger">
+                                <button class="btn-danger"
+                                        id="delWidBtn">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
@@ -314,6 +359,7 @@
                     <form class="px-2 pb-2">
                         <div class="form-group">
                             <textarea type="text"
+                                      id="listTxt"
                                       placeholder="Put each
 item in
 new row"
@@ -336,7 +382,7 @@ new row"
 
                         <div>
                             <h4> Preview</h4>
-                            <ul>
+                            <ul id="listPrev">
                                 <li>Put each</li>
                                 <li>item in</li>
                                 <li>new row"</li>
@@ -359,10 +405,12 @@ new row"
 
                         <div class="col-4">
                             <div class="float-right pr-2">
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="upBtn">
                                     <i class="fas fa-arrow-up"></i>
                                 </button>
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="dwnBtn">
                                     <i class="fas fa-arrow-down"></i>
                                 </button>
                                 <select class="mt-2">
@@ -372,7 +420,8 @@ new row"
                                     <option value="3">Image</option>
                                     <option value="4">Link</option>
                                 </select>
-                                <button class="btn-danger">
+                                <button class="btn-danger"
+                                        id="delWidBtn">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
@@ -392,7 +441,7 @@ new row"
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
-                                   id="widgetNameForm"
+                                   id="imgWidNm"
                                    placeholder="Widget name">
                         </div>
 
@@ -400,7 +449,8 @@ new row"
                             <h4> Preview</h4>
                             <img src="https://jillsbooks.files.wordpress.com/2010/12/red-apple.jpg"
                                  alt="Responsive image"
-                                 class="img-thumbnail">
+                                 class="img-thumbnail"
+                                 id="prevImg">
                         </div>
                     </form>
                 </div>
@@ -419,10 +469,12 @@ new row"
 
                         <div class="col-4">
                             <div class="float-right pr-2">
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="upBtn">
                                     <i class="fas fa-arrow-up"></i>
                                 </button>
-                                <button class="btn-warning">
+                                <button class="btn-warning"
+                                        id="dwnBtn">
                                     <i class="fas fa-arrow-down"></i>
                                 </button>
                                 <select class="mt-2">
@@ -432,7 +484,8 @@ new row"
                                     <option value="3">Image</option>
                                     <option value="4">Link</option>
                                 </select>
-                                <button class="btn-danger">
+                                <button class="btn-danger"
+                                        id="delWidBtn">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
@@ -460,13 +513,14 @@ new row"
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
-                                   id="widgetNameForm"
+                                   id="linkWdNm"
                                    placeholder="Widget name">
                         </div>
 
                         <div>
                             <h4> Preview</h4>
-                            <a href="http://lorempixel.com/300/150/">Apple</a>
+                            <a href="http://lorempixel.com/300/150/"
+                               id="linkPrev">Apple</a>
                         </div>
                     </form>
                 </div>
