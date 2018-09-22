@@ -24,10 +24,25 @@ function User(username, password, firstName, lastName, phone, role, dateOfBirth)
     function getUsername() {
         return this.username;
     }
+
     function setPassword(password) {
         this.password = password;
     }
-    function getUsername() {
-        return this.username;
+    function getPassword() {
+        return this.password;
+    }
+
+    function setFirstName(firstName) {
+        this.firstName = firstName;
+    }
+    function getFirstName() {
+        return this.firstName;
+    }
+
+    function setLastName(lastName) {
+        this.lastName = lastName;
+    }
+    function getLastName() {
+        return this.lststName;
     }
 }
