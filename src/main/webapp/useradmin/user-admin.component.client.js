@@ -1,41 +1,44 @@
+(function () {
+    var $usernameFld, $passwordFld;
+    var $removeBtn, $editBtn, $createBtn;
+    var $firstNameFld, $lastNameFld;
+    var $userRowTemplate, $tbody;
+    //var userService = new AdminUserServiceClient();
+    $(main);
 
-var $usernameFld, $passwordFld;
-var $removeBtn, $editBtn $createBtn;
-var $firstnameFld, $lastnameFld;
-var $firstnameFld, $lastnameFld;
-var $createBtn, $selectBtn, $updateBtn, $deleteBtn;
-var $userRowTemplate, $tBody;
-$(main);
 
+    function main() {
+        // language=JQuery-CSS
+        $usernameFld = $("#usernameFld");
+        $passwordFld = $("#passwordFld");
+        $firstnameFld = $("#firstnameFld");
+        $lastnameFld = $("#lastnameFld");
+        $createBtn = $(".wbdv-create");
+        $editBtn = $(".wbdv-update");
+        $removeBtn = $(".wbdv-remove");
 
-function main() {
-    $usernameFld = $("#usernameFld");
-    $passwordFld = $("#passwordFld");
-    $firstnameFld = $("#firstnameFld");
-    $lastnameFld = $("#lastnameFld");
-    $createBtn = $(".wbdv-create");
-    $updateBtn = $(".wbdv-update");
+        $userRowTemplate = $(".wbdv-template.wbdv-user");
+        $tBody = $(".wbdv-tbody");
 
-     $userRowTemplate = $(".wbdv-template.wbdv-user")
-    $tBody = $(".wbdv-body")
+        $createBtn.click(createUser);
+        $deleteBtn.click(deleteUser);
+    }
 
-    $createBtn.click(createUser);
-     $deleteBtn.click(deleteUser);
-}
+    function createUser() {
+        var newUser = $userRowTemplate.clone();
+        newUser
+            .attr("id", timestamp)
+            .removeClass("wbdv-hidden")
+            .find(".wbdv-username")
+            .html($usernameFld);
 
-function createUser() {
-    var newUser = $userRowTemplate.clone();
-    newUser
-        .attr("id",timestamp)
-        .removeClass("wbdv-hidden")
-        .find(".wbdv-username")
-        .html(usernameFld);
+        $tBody.append(newUser);
+    }
 
-    $tBody.append(newUser);
-}
+    function deleteUser(event) {
+        $(event.currentTarget).attr("id");
+        console.log();
 
-function deleteUser(event) {
-    $(event.currentTarget).attr("id");
-    console.log()
+    }
 
-}
+})
