@@ -5,6 +5,7 @@
     var $removeBtn, $editBtn, $createBtn;
     var $firstNameFld, $lastNameFld;
     var $userRowTemplate, $tbody;
+    var userService = new AdminUserServiceClient();
 
     $(main);
 
