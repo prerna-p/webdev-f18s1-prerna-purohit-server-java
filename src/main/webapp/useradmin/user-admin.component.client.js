@@ -1,14 +1,15 @@
+// Immediately Invoked Function Expression (IIFE)
 (function () {
     var $usernameFld, $passwordFld;
+    var  $firstnameFld,  $lastnameFld;
     var $removeBtn, $editBtn, $createBtn;
     var $firstNameFld, $lastNameFld;
     var $userRowTemplate, $tbody;
-    //var userService = new AdminUserServiceClient();
+
     $(main);
 
 
     function main() {
-        // language=JQuery-CSS
         $usernameFld = $("#usernameFld");
         $passwordFld = $("#passwordFld");
         $firstnameFld = $("#firstnameFld");
@@ -21,10 +22,11 @@
         $tBody = $(".wbdv-tbody");
 
         $createBtn.click(createUser);
-        $deleteBtn.click(deleteUser);
+        $removeBtn.click(deleteUser);
     }
 
     function createUser() {
+        console.log("in createUser");
         var newUser = $userRowTemplate.clone();
         newUser
             .attr("id", timestamp)
@@ -41,4 +43,4 @@
 
     }
 
-})
+})()
