@@ -71,8 +71,9 @@ function AdminUserServiceClient() {
 
     }
 
-    function deleteUser(userId, callback) {
-
+    function deleteUser(userId) {
+        var userInfo = findUserById(userId);
+        users.pop(userInfo);
     }
 
 }

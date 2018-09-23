@@ -75,8 +75,10 @@
     }
 
     function deleteUser(event) {
-        console.log("in deleteUser");
-        $(event.currentTarget).attr("id");
+        var record = $(event.currentTarget).parent().parent().parent().parent();
+        var id = record.attr('id');
+        userService.deleteUser(id);
+        findAllUsers();
 
     }
 
@@ -98,22 +100,18 @@
         }
         userService.updateUser(this.id, newUserInfo);
         findAllUsers();
-
-
     }
 
     function renderUser(event) {
         var target = $(event.target);
         var record = target.parent().parent().parent().parent();
         var id = record.attr('id');
-
         var userInfo = userService.findUserById(id);
         $usernameFld.val(userInfo.username);
         $passwordFld.val(userInfo.password);
         $firstNameFld.val(userInfo.firstName);
         $lastNameFld.val(userInfo.lastName);
         $roleFld.val(userInfo.role);
-
         $updateBtn.attr("id",userInfo.id);
 
     }
@@ -123,8 +121,15 @@
         var user = userService.findUserById(id);
     }
 
-    function selectUser(username) {
+    function selectUser() {
         console.log("in selectUser")
+        var username = $usernameFld.val();
+        var firstname = $firstNameFld.val();
+        var lastname = $lastNameFld.val();
+        var role = $roleFld.find(":selected").text();
+
+        var tBody = $('.wbdv-tbody');
+
 
     }
 
