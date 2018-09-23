@@ -35,8 +35,29 @@
     }
 
     function createUser() {
-        console.log("in createUser");
-        
+        var username = $usernameFld.val();
+        var firstname = $firstNameFld.val();
+        var password = $passwordFld.val();
+        var lastname = $lastNameFld.val();
+        var role = $roleFld.find(":selected").text();
+
+        $usernameFld.val("");
+        $firstNameFld.val("");
+        $lastNameFld.val("");
+        $passwordFld.val("");
+        $roleFld.val("");
+
+        let newUser = {
+            "username":username,
+            "password":password,
+            "firstName":firstname,
+            "lastName":lastname,
+            "role":role
+        }
+
+        userService.createUser(newUser);
+
+        findAllUsers();
     }
 
     function deleteUser(event) {
