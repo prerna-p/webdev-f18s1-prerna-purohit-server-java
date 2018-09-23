@@ -54,6 +54,20 @@ function AdminUserServiceClient() {
     }
 
     function updateUser(userId, user) {
+        console.log(userId);
+        oldInfo = findUserById(userId);
+        if(oldInfo.username != user.username){
+            oldInfo.username = user.username;
+        }
+        if(oldInfo.firstName != user.firstName){
+            oldInfo.firstName = user.firstName;
+        }
+        if(oldInfo.lastName != user.lastName){
+            oldInfo.lastName = user.lastName;
+        }
+        if(oldInfo.role != user.role){
+            oldInfo.role = user.role;
+        }
 
     }
 

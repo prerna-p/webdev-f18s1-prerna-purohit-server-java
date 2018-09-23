@@ -31,6 +31,7 @@
         $editBtn.click(renderUser);
         $searchBtn.click(findUserById);
         $updateBtn.click(updateUser);
+        $searchBtn.click(selectUser);
 
         findAllUsers();
     }
@@ -79,21 +80,9 @@
 
     }
 
-    function renderUser(event){
+    function updateUser(event){
+
         //console.log(event);
-        var target = $(event.target);
-        console.log(target.parent().parent().parent().parent()[0]);
-        var $record = target.parent().parent().parent().parent();
-
-        var $userInfo = userService.findUserById($id);
-        $usernameFld.val($userInfo.username);
-        $passwordFld.val($userInfo.password);
-        $firstNameFld.val($userInfo.firstName);
-        $lastNameFld.val($userInfo.lastName);
-        $roleFld.val($userInfo.role);
-    }
-
-    function updateUser(event) {
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
         var password = $passwordFld.val();
@@ -107,8 +96,25 @@
             "lastName":lastname,
             "role":role
         }
+        userService.updateUser(this.id, newUserInfo);
+        findAllUsers();
 
-        userService.updateUser(id, newUserInfo);
+
+    }
+
+    function renderUser(event) {
+        var target = $(event.target);
+        var record = target.parent().parent().parent().parent();
+        var id = record.attr('id');
+
+        var userInfo = userService.findUserById(id);
+        $usernameFld.val(userInfo.username);
+        $passwordFld.val(userInfo.password);
+        $firstNameFld.val(userInfo.firstName);
+        $lastNameFld.val(userInfo.lastName);
+        $roleFld.val(userInfo.role);
+
+        $updateBtn.attr("id",userInfo.id);
 
     }
 
@@ -117,8 +123,9 @@
         var user = userService.findUserById(id);
     }
 
-    function selectUser() {
+    function selectUser(username) {
         console.log("in selectUser")
+
     }
 
     function renderUsers(users) {
@@ -139,7 +146,7 @@
             $tRow.find('.wbdv-role')
                 .html(users[i].role);
             $tRow.find('.wbdv-remove').click(deleteUser);
-            $tRow.find('.wbdv-edit').click(updateUser);
+            $tRow.find('.wbdv-edit').click(renderUser);
             $tBody.append($tRow);
 
         }
