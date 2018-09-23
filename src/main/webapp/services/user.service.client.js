@@ -45,11 +45,15 @@ function AdminUserServiceClient() {
         return users;
     }
 
-    function findUserById(userId, callback) {
-
+    function findUserById(userId) {
+        for(var i=0; i<users.length; i++){
+            if(users[i].id == userId){
+                return users[i];
+            }
+        }
     }
 
-    function updateUser(userId, user, callback) {
+    function updateUser(userId, user) {
 
     }
 
