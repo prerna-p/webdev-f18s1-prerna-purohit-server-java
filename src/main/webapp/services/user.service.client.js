@@ -4,6 +4,7 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
+    this.searchUser = searchUser;
     this.url = "users.json";
     var self = this;
 
@@ -54,7 +55,6 @@ function AdminUserServiceClient() {
     }
 
     function updateUser(userId, user) {
-        console.log(userId);
         oldInfo = findUserById(userId);
         if(oldInfo.username != user.username){
             oldInfo.username = user.username;
@@ -74,6 +74,33 @@ function AdminUserServiceClient() {
     function deleteUser(userId) {
         var userInfo = findUserById(userId);
         users.pop(userInfo);
+    }
+
+    function searchUser(searchInfo) {
+        let username, firstname, lastname, role;
+
+        if(searchInfo.username != ''){
+            username = searchInfo.username;
+        }
+        if(searchInfo.firstName != ''){
+            firstname = searchInfo.firstName;
+        }
+        if(searchInfo.lastName != ''){
+            lastname = searchInfo.lastName;
+        }
+        if(searchInfo.role != ''){
+            role = searchInfo.role;
+        }
+        for(var i=0; i<users.length; i++){
+            if(users[i].username.match(username) ||
+                users[i].firstName == firstname ||
+                users[i].lastName == lastname ||
+                users[i].role == role) {
+
+                return users[i];
+            }
+        }
+
     }
 
 }

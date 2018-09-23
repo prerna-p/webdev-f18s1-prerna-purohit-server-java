@@ -31,7 +31,7 @@
         $editBtn.click(renderUser);
         $searchBtn.click(findUserById);
         $updateBtn.click(updateUser);
-        $searchBtn.click(selectUser);
+        $searchBtn.click(searchUser);
 
         findAllUsers();
     }
@@ -99,6 +99,13 @@
             "role":role
         }
         userService.updateUser(this.id, newUserInfo);
+
+        $usernameFld.val("");
+        $firstNameFld.val("");
+        $lastNameFld.val("");
+        $passwordFld.val("");
+        $roleFld.val("");
+
         findAllUsers();
     }
 
@@ -113,7 +120,6 @@
         $lastNameFld.val(userInfo.lastName);
         $roleFld.val(userInfo.role);
         $updateBtn.attr("id",userInfo.id);
-
     }
 
     function findUserById(id) {
@@ -121,16 +127,41 @@
         var user = userService.findUserById(id);
     }
 
-    function selectUser() {
-        console.log("in selectUser")
+    function selectUser(user) {
+
+        $tBody.empty();
+        let $tRow = $userRowTemplate.clone();
+        $tRow.removeClass('wbdv-hidden');
+        $tRow.attr("id",user.id);
+        $tRow.find('.wbdv-username')
+            .html(user.username);
+        $tRow.find('.wbdv-first-name')
+            .html(user.firstName);
+        $tRow.find('.wbdv-last-name')
+            .html(user.lastName);
+        $tRow.find('.wbdv-role')
+            .html(user.role);
+        $tRow.find('.wbdv-remove').click(deleteUser);
+        $tRow.find('.wbdv-edit').click(renderUser);
+        $tBody.append($tRow);
+
+    }
+
+    function searchUser() {
+        console.log("in selectUser");
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
         var lastname = $lastNameFld.val();
         var role = $roleFld.find(":selected").text();
 
-        var tBody = $('.wbdv-tbody');
-
-
+        let searchInfo = {
+            "username":username,
+            "firstName":firstname,
+            "lastName":lastname,
+            "role":role
+        }
+        let userField = userService.searchUser(searchInfo);
+        selectUser(userField);
     }
 
     function renderUsers(users) {
