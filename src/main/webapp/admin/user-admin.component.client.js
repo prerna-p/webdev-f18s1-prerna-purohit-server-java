@@ -83,8 +83,6 @@
     }
 
     function updateUser(event){
-
-        //console.log(event);
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
         var password = $passwordFld.val();
@@ -92,6 +90,7 @@
         var role = $roleFld.find(":selected").text();
 
         let newUserInfo = {
+            "id":this.id,
             "username":username,
             "password":password,
             "firstName":firstname,
@@ -123,7 +122,6 @@
     }
 
     function findUserById(id) {
-        console.log("in findUserById");
         var user = userService.findUserById(id);
     }
 
@@ -131,24 +129,24 @@
 
         $tBody.empty();
         let $tRow = $userRowTemplate.clone();
-        $tRow.removeClass('wbdv-hidden');
-        $tRow.attr("id",user.id);
-        $tRow.find('.wbdv-username')
-            .html(user.username);
-        $tRow.find('.wbdv-first-name')
-            .html(user.firstName);
-        $tRow.find('.wbdv-last-name')
-            .html(user.lastName);
-        $tRow.find('.wbdv-role')
-            .html(user.role);
-        $tRow.find('.wbdv-remove').click(deleteUser);
-        $tRow.find('.wbdv-edit').click(renderUser);
-        $tBody.append($tRow);
-
+        if(user != null){
+            $tRow.removeClass('wbdv-hidden');
+            $tRow.attr("id",user.id);
+            $tRow.find('.wbdv-username')
+                .html(user.username);
+            $tRow.find('.wbdv-first-name')
+                .html(user.firstName);
+            $tRow.find('.wbdv-last-name')
+                .html(user.lastName);
+            $tRow.find('.wbdv-role')
+                .html(user.role);
+            $tRow.find('.wbdv-remove').click(deleteUser);
+            $tRow.find('.wbdv-edit').click(renderUser);
+            $tBody.append($tRow);
+        }
     }
 
     function searchUser() {
-        console.log("in selectUser");
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
         var lastname = $lastNameFld.val();

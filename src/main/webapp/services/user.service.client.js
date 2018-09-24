@@ -55,18 +55,21 @@ function AdminUserServiceClient() {
     }
 
     function updateUser(userId, user) {
-        oldInfo = findUserById(userId);
-        if(oldInfo.username != user.username){
-            oldInfo.username = user.username;
-        }
-        if(oldInfo.firstName != user.firstName){
-            oldInfo.firstName = user.firstName;
-        }
-        if(oldInfo.lastName != user.lastName){
-            oldInfo.lastName = user.lastName;
-        }
-        if(oldInfo.role != user.role){
-            oldInfo.role = user.role;
+        for(var i=0; i<users.length; i++) {
+            if (users[i].id == userId) {
+                if (users[i].username != user.username) {
+                    users[i].username = user.username;
+                }
+                if (users[i].firstName != user.firstName) {
+                    users[i].firstName = user.firstName;
+                }
+                if (users[i].lastName != user.lastName) {
+                    users[i].lastName = user.lastName;
+                }
+                if (users[i].role != user.role) {
+                    users[i].role = user.role;
+                }
+            }
         }
 
     }
@@ -78,7 +81,6 @@ function AdminUserServiceClient() {
 
     function searchUser(searchInfo) {
         let username, firstname, lastname, role;
-
         if(searchInfo.username != ''){
             username = searchInfo.username;
         }
@@ -92,7 +94,7 @@ function AdminUserServiceClient() {
             role = searchInfo.role;
         }
         for(var i=0; i<users.length; i++){
-            if(users[i].username.match(username) ||
+            if(users[i].username == username ||
                 users[i].firstName == firstname ||
                 users[i].lastName == lastname ||
                 users[i].role == role) {
