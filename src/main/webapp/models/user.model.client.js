@@ -3,6 +3,9 @@ function User(username, password, firstName, lastName, phone, role, dateOfBirth)
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.phone = phone;
+    this.role = role;
+    this.dateOfBirth = dateOfBirth;
 
     this.setUsername = setUsername;
     this.getUsername = getUsername;
@@ -16,7 +19,14 @@ function User(username, password, firstName, lastName, phone, role, dateOfBirth)
     this.setLastName = setLastName;
     this.getLastname = getLastName;
 
-    // ...same for rest of properties…
+    this.setPhone = setPhone;
+    this.getPhone = getPhone;
+
+    this.getRole = getRole;
+    this.setRole = setRole;
+
+    this.getDateOfBirth = getDateOfBirth;
+    this.setDateOfBirth = setDateOfBirth;
 
     function setUsername(username) {
         this.username = username;
@@ -43,6 +53,28 @@ function User(username, password, firstName, lastName, phone, role, dateOfBirth)
         this.lastName = lastName;
     }
     function getLastName() {
-        return this.lststName;
+        return this.lastName;
+    }
+
+    function setPhone(phone) {
+        this.phone = phone;
+    }
+
+    function getPhone() {
+        return this.phone;
+    }
+    function setRole(role) {
+        this.role = role;
+    }
+
+    function getRole() {
+        return this.role;
+    }
+    function setDateOfBirth(dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    function getDateOfBirth() {
+        return this.dateOfBirth;
     }
 }
