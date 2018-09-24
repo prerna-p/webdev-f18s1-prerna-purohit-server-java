@@ -28,7 +28,7 @@
 
         $createBtn.click(createUser);
         $removeBtn.click(deleteUser);
-        $editBtn.click(renderUser);
+        $editBtn.click(selectUser);
         $searchBtn.click(findUserById);
         $updateBtn.click(updateUser);
         $searchBtn.click(searchUser);
@@ -108,7 +108,7 @@
         findAllUsers();
     }
 
-    function renderUser(event) {
+    function selectUser(event) {
         var target = $(event.target);
         var record = target.parent().parent().parent().parent();
         var id = record.attr('id');
@@ -125,27 +125,6 @@
         var user = userService.findUserById(id);
     }
 
-    function selectUser(user) {
-
-        $tBody.empty();
-        let $tRow = $userRowTemplate.clone();
-        if(user != null){
-            $tRow.removeClass('wbdv-hidden');
-            $tRow.attr("id",user.id);
-            $tRow.find('.wbdv-username')
-                .html(user.username);
-            $tRow.find('.wbdv-first-name')
-                .html(user.firstName);
-            $tRow.find('.wbdv-last-name')
-                .html(user.lastName);
-            $tRow.find('.wbdv-role')
-                .html(user.role);
-            $tRow.find('.wbdv-remove').click(deleteUser);
-            $tRow.find('.wbdv-edit').click(renderUser);
-            $tBody.append($tRow);
-        }
-    }
-
     function searchUser() {
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
@@ -158,8 +137,32 @@
             "lastName":lastname,
             "role":role
         }
+
         let userField = userService.searchUser(searchInfo);
-        selectUser(userField);
+        renderUser(userField);
+
+    }
+
+    function renderUser(user) {
+
+        $tBody.empty();
+        let $tRow = $userRowTemplate.clone();
+        console.log(user);
+        if(user != null){
+            $tRow.removeClass('wbdv-hidden');
+            $tRow.attr("id",user.id);
+            $tRow.find('.wbdv-username')
+                .html(user.username);
+            $tRow.find('.wbdv-first-name')
+                .html(user.firstName);
+            $tRow.find('.wbdv-last-name')
+                .html(user.lastName);
+            $tRow.find('.wbdv-role')
+                .html(user.role);
+            $tRow.find('.wbdv-remove').click(deleteUser);
+            $tRow.find('.wbdv-edit').click(selectUser);
+            $tBody.append($tRow);
+        }
     }
 
     function renderUsers(users) {
@@ -180,7 +183,7 @@
             $tRow.find('.wbdv-role')
                 .html(users[i].role);
             $tRow.find('.wbdv-remove').click(deleteUser);
-            $tRow.find('.wbdv-edit').click(renderUser);
+            $tRow.find('.wbdv-edit').click(selectUser);
             $tBody.append($tRow);
 
         }

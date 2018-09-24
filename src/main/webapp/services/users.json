@@ -1,5 +1,6 @@
 [
   {
+    "id": "123",
     "username": "alice",
     "password": "alice",
     "email": "alice@wonderland.com",
@@ -8,6 +9,7 @@
     "role": "FACULTY"
   },
   {
+    "id":"456",
     "username": "bob",
     "password": "bob",
     "email": "bob@builder.com",
@@ -16,6 +18,7 @@
     "role": "STUDENT"
   },
   {
+    "id": "789",
     "username": "charly",
     "password": "charly",
     "email": "charly@peanuts.com",

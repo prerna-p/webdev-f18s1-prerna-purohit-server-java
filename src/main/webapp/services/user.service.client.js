@@ -82,25 +82,27 @@ function AdminUserServiceClient() {
     function searchUser(searchInfo) {
         let username, firstname, lastname, role;
         if(searchInfo.username != ''){
-            username = searchInfo.username;
+            username = searchInfo.username.toLowerCase();
         }
         if(searchInfo.firstName != ''){
-            firstname = searchInfo.firstName;
+            firstname = searchInfo.firstName.toLowerCase();
         }
         if(searchInfo.lastName != ''){
-            lastname = searchInfo.lastName;
+            lastname = searchInfo.lastName.toLowerCase();
         }
         if(searchInfo.role != ''){
             role = searchInfo.role;
         }
+
         for(var i=0; i<users.length; i++){
-            if(users[i].username == username ||
-                users[i].firstName == firstname ||
-                users[i].lastName == lastname ||
+            if(users[i].username.toLowerCase() == username ||
+                users[i].firstName.toLowerCase() == firstname ||
+                users[i].lastName.toLowerCase() == lastname ||
                 users[i].role == role) {
 
                 return users[i];
             }
+
         }
 
     }
