@@ -1,9 +1,9 @@
 // Immediately Invoked Function Expression (IIFE)
+
 (function () {
     var usernameFld, passwordFld;
     var firstNameFld, lastNameFld, roleFld;
     var removeBtn, editBtn, createBtn, searchBtn, updateBtn;
-    var firstNameFld, lastNameFld;
     var userRowTemplate, tBody;
     var userService = new AdminUserServiceClient();
     var btnUpdate;
@@ -12,8 +12,6 @@
 
 
     function main() {
-
-
 
         // grab form fields
         $usernameFld = $("#usernameFld");
@@ -113,7 +111,10 @@
 
     }
 
-
+    /*
+     * Takes contents from form and passes to user service to
+     * update the data
+     */
     function updateUser(event){
 
         var username = $usernameFld.val();
@@ -141,6 +142,11 @@
         findAllUsers();
     }
 
+    /*
+     * When the edit button is selected this event handler
+     * grabs the user data and updates it in the form in
+     * table header
+     */
     function selectUser(event) {
         var target = $(event.target);
         var record = target.parent().parent().parent().parent();
@@ -156,10 +162,19 @@
 
     }
 
+    /*
+     * returns user information for a given user id
+     * by calling the corresponding user service function
+     */
     function findUserById(id) {
         var user = userService.findUserById(id);
+        return user;
     }
 
+    /*
+     * event handler for search button
+     * performs full matching only
+     */
     function searchUser() {
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
@@ -178,6 +193,9 @@
 
     }
 
+    /*
+     * renders information for a single user only
+     */
     function renderUser(user) {
 
         $tBody.empty();
@@ -200,6 +218,9 @@
         }
     }
 
+    /*
+     * accepts an array of user instances and renders them
+     */
     function renderUsers(users) {
 
         $tBody.empty();

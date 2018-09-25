@@ -5,7 +5,6 @@ function AdminUserServiceClient() {
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
     this.searchUser = searchUser;
-    this.url = "users.json";
     var self = this;
 
     let users = [
