@@ -6,26 +6,42 @@
     var firstNameFld, lastNameFld;
     var userRowTemplate, tBody;
     var userService = new AdminUserServiceClient();
-    var userId;
-    var $users;
+    var btnUpdate;
+
     $(main);
 
 
     function main() {
+
+
+
+        // grab form fields
         $usernameFld = $("#usernameFld");
         $passwordFld = $("#passwordFld");
         $firstNameFld = $("#firstNameFld");
         $lastNameFld = $("#lastNameFld");
         $roleFld = $("#roleFld");
+
+        // grab buttons
         $createBtn = $(".wbdv-create");
         $editBtn = $(".wbdv-edit");
         $removeBtn = $(".wbdv-remove");
         $searchBtn = $(".wbdv-search");
-        $updateBtn = $(".wbdv-update")
 
+        /* btn-update is my class for show/hide of update button
+         *  it is visible only after edit button is clicked and user info
+         *  appears in the form
+         */
+        $updateBtn = $(".wbdv-update")
+        $showHideUpdate = $(".btn-update");
+        // hide update button
+        $showHideUpdate.hide();
+
+        // grab table body & row
         $userRowTemplate = $(".wbdv-template.wbdv-user");
         $tBody = $(".wbdv-tbody");
 
+        // declare click action function
         $createBtn.click(createUser);
         $removeBtn.click(deleteUser);
         $editBtn.click(selectUser);
@@ -33,14 +49,24 @@
         $updateBtn.click(updateUser);
         $searchBtn.click(searchUser);
 
+        // load table
         findAllUsers();
     }
-    
+
+    /*
+     * Uses user service findAllUsers() to retrieve all the users
+     * and passes response to renderUsers
+     */
     function findAllUsers() {
         users = userService.findAllUsers();
         renderUsers(users);
     }
 
+    /*
+     * Reads from the form elements and creates a user object.
+     * Uses the user service to create the new user.
+     * Updates the list of users on server response
+     */
     function createUser() {
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
@@ -48,11 +74,13 @@
         var lastname = $lastNameFld.val();
         var role = $roleFld.find(":selected").text();
 
+        // do not accept empty field
         if(username === '') {
             alert("username must be entered");
             return;
         }
 
+        // empty form fields
         $usernameFld.val("");
         $firstNameFld.val("");
         $lastNameFld.val("");
@@ -74,6 +102,9 @@
         findAllUsers();
     }
 
+    /*
+     * Reads the user and sends a delete request to the server.
+     */
     function deleteUser(event) {
         var record = $(event.currentTarget).parent().parent().parent().parent();
         var id = record.attr('id');
@@ -82,7 +113,9 @@
 
     }
 
+
     function updateUser(event){
+
         var username = $usernameFld.val();
         var firstname = $firstNameFld.val();
         var password = $passwordFld.val();
@@ -118,7 +151,9 @@
         $firstNameFld.val(userInfo.firstName);
         $lastNameFld.val(userInfo.lastName);
         $roleFld.val(userInfo.role);
+        $showHideUpdate.show();
         $updateBtn.attr("id",userInfo.id);
+
     }
 
     function findUserById(id) {
@@ -138,8 +173,8 @@
             "role":role
         }
 
-        let userField = userService.searchUser(searchInfo);
-        renderUser(userField);
+        let searchedUsers = userService.searchUser(searchInfo);
+        renderUsers(searchedUsers);
 
     }
 

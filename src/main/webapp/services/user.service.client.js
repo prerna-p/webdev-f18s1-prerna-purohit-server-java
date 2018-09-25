@@ -80,31 +80,25 @@ function AdminUserServiceClient() {
     }
 
     function searchUser(searchInfo) {
-        let username, firstname, lastname, role;
-        if(searchInfo.username != ''){
-            username = searchInfo.username.toLowerCase();
-        }
-        if(searchInfo.firstName != ''){
-            firstname = searchInfo.firstName.toLowerCase();
-        }
-        if(searchInfo.lastName != ''){
-            lastname = searchInfo.lastName.toLowerCase();
-        }
-        if(searchInfo.role != ''){
-            role = searchInfo.role;
-        }
+        let username = searchInfo.username.toLowerCase();
+        let firstname = searchInfo.firstName.toLowerCase();
+        let lastname = searchInfo.lastName.toLowerCase();
+        let role = searchInfo.role;
+
+        let searchedUsers = [];
 
         for(var i=0; i<users.length; i++){
-            if(users[i].username.toLowerCase() == username ||
-                users[i].firstName.toLowerCase() == firstname ||
-                users[i].lastName.toLowerCase() == lastname ||
-                users[i].role == role) {
 
-                return users[i];
+            if((username == ""||(users[i].username.toLowerCase() == username)) &&
+                (firstname == "" || (users[i].firstName.toLowerCase() == firstname)) &&
+                (lastname == "" || (users[i].lastName.toLowerCase() == lastname)) &&
+                (role == "" || (users[i].role == role))) {
+
+                searchedUsers.push(users[i]);
             }
 
         }
-
+        return searchedUsers;
     }
 
 }
